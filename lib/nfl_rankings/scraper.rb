@@ -1,3 +1,7 @@
+require "nokogiri"
+require "open-uri"
+require "pry"
+
 class NflRankings::Scraper
 
     html = open("https://www.usatoday.com/sports/nfl/rankings/")
