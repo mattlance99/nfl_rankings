@@ -1,6 +1,6 @@
-require "nfl_rankings/version"
+require "pry"
+require "open-uri"
+require "nokogiri"
 
-module NflRankings
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative
+"./nfl_rankings/version"
