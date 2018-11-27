@@ -25,11 +25,9 @@ def greeting_and_search
 
   def search(input)
     if @nfl_teams.include?(input)
-       puts "you did it"
-        #Rin
+      Scraper.scrape_team_page(input)
     else
       puts "Invalid Response. Please try again."
     end
-
   end
 end
