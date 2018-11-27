@@ -16,12 +16,12 @@ class NflRankings::Scraper
       mascot = team_doc.css('.last_name').text
       team_url = "https://www.usatoday.com/sports/nfl/#{mascot}"
       Team.new(city, mascot, team_url)
-    end
-    
+      end
+  end
+  
   def self.scrape_team_page(team_url)
     html = open("#{team_url}")
     team_page = Nokogiri::HTML(html)
     leading_stats = team_page.css(".sports-team-statistics-chart-titlevalue").children[0..2].map {|stat|stat.text}
-    end
   end
 end
