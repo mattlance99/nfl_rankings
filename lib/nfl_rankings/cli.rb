@@ -20,7 +20,11 @@ class NflRankings::CLI
         team_rank = input.to_i
         team_rank -= 1
         team_page_url = Team.all[team_rank].team_url
-        Scraper.scrape_team_page(team_page_url)
+        Scraper.scrape_team_page(team_rank, team_page_url)
+        puts "\nTotal yards for each offensive category:\n"
+        puts "\nTotal Passing yards: #{Team.all[team_rank].passing_yards}"
+        puts "Total Rushing yards: #{Team.all[team_rank].rushing_yards}"
+        puts "Total Receiving yards: #{Team.all[team_rank].receiving_yards}"
       else
         puts "Invalid Response. Please try again."
       end
