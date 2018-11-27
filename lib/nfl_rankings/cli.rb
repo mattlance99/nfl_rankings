@@ -1,6 +1,6 @@
 class NflRankings::CLI 
 
-  def greeting_and_search
+  def greeting_and_display
     @nfl_teams = *(1..32)
     @nfl_teams.map! { |i| i.to_s }
     input = ""
