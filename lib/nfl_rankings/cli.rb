@@ -1,16 +1,20 @@
 class NflRankings::CLI 
 
-  def greeting_and_search
+def greeting_and_search
     @nfl_teams = *(1..32)
     @nfl_teams.map! { |i| i.to_s }
     input = ""
+    puts "\n The USA TODAY NFL Power Rankings are as follows: \n\n"
+    Scraper.scrape_main_page
+
+    Team.all.each_with_index do |team, index|
+      puts "#{index +1 }. #{team.city} #{team.mascot}"
+    end
 
     while input != "exit"
-      puts "Here are the USA TODAY NFL Power Rankings. \n\n"
-      Scraper
-      puts "If interested in a team's stats for the previous game, please select a team by number.\n\n"
+      puts "\n\nSelect a team(by number) to see stats for the previous game.\n"
       puts "To quit, type 'exit'."
-      puts "Please enter a team number or type 'exit'"
+      puts "\nPlease enter a team number or type 'exit':"
       input = gets.strip.downcase
       if input != "exit"
         search(input)
