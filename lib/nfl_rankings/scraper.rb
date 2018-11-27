@@ -22,5 +22,6 @@ class NflRankings::Scraper
     html = open("#{team_url}")
     team_page = Nokogiri::HTML(html)
     leading_stats = team_page.css(".sports-team-statistics-chart-titlevalue").children[0..2].map {|stat|stat.text}
+    end
   end
 end
