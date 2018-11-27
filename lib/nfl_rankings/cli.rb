@@ -1,6 +1,6 @@
 class NflRankings::CLI 
 
-def greeting_and_search
+  def greeting_and_search
     @nfl_teams = *(1..32)
     @nfl_teams.map! { |i| i.to_s }
     input = ""
@@ -16,17 +16,12 @@ def greeting_and_search
       puts "To quit, type 'exit'."
       puts "\nPlease enter a team number or type 'exit':"
       input = gets.strip.downcase
-      if input != "exit"
-        search(input)
+      if input != "exit" && @nfl_teams.include?(input)
+        team_page_url = Team.all[input.to_i].team_url
+        Scraper.scrape_team_page(team_page_url)
+      else
+        puts "Invalid Response. Please try again."
       end
-    end
-  end
-
-  def search(input)
-    if @nfl_teams.include?(input)
-      Scraper.scrape_team_page(input)
-    else
-      puts "Invalid Response. Please try again."
     end
   end
 end
