@@ -22,7 +22,6 @@ def greeting_and_search
     end
   end
 
-
   def search(input)
     if @nfl_teams.include?(input)
       Scraper.scrape_team_page(input)
