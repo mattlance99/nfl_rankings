@@ -19,9 +19,12 @@ class NflRankings::Scraper
       end
   end
   
-  def self.scrape_team_page(team_url)
+  def self.scrape_team_page(team_rank, team_url)
     html = open("#{team_url}")
     team_page = Nokogiri::HTML(html)
     leading_stats = team_page.css(".sports-team-statistics-chart-titlevalue").children[0..2].map {|stat|stat.text}
+    Team.all[team_rank].passing_yards = leading_stats[0]
+    Team.all[team_rank].rushing_yards = leading_stats[1]
+    Team.all[team_rank].receiving_yards = leading_stats[2]
   end
 end
