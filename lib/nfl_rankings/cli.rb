@@ -18,7 +18,7 @@ class NflRankings::CLI
       input = gets.strip.downcase
       if input != "exit" && @nfl_teams.include?(input)
         team_rank = input.to_i
-        team_rank = team_rank - 1
+        team_rank -= 1
         team_page_url = Team.all[team_rank].team_url
         Scraper.scrape_team_page(team_page_url)
       else
