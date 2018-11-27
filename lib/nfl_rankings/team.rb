@@ -1,6 +1,6 @@
 class NflRankings::Team
   
-  attr_accessor :city, :mascot
+  attr_accessor :city, :mascot, :team_url
   @@all = []
 
   def initialize(city, mascot, team_url)
