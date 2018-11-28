@@ -12,7 +12,7 @@ class NflRankings::CLI
     end
 
     while input != "exit"
-      puts "\n\nSelect a team(by number) to see stats for the previous game.\n"
+      puts "\n\n Select a team to see that team's total yards for each offensive category:\n"
       puts "To quit, type 'exit'."
       puts "\nPlease enter a team number or type 'exit':"
       input = gets.strip.downcase
