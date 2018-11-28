@@ -15,7 +15,7 @@ class NflRankings::Scraper
       city = team_doc.css('.first_name').text
       mascot = team_doc.css('.last_name').text
       team_url = "https://www.usatoday.com/sports/nfl/#{mascot}"
-      Team.new(city, mascot, team_url)
+      NflRankings::Team.new(city, mascot, team_url)
       end
   end
   

@@ -1,13 +1,13 @@
 class NflRankings::CLI 
 
-  def greeting_and_display
+  def start
     @nfl_teams = *(1..32)
     @nfl_teams.map! { |i| i.to_s }
     input = ""
     puts "\n The USA TODAY NFL Power Rankings are as follows: \n\n"
-    Scraper.scrape_main_page
+    NflRankings::Scraper.scrape_main_page
 
-    Team.all.each_with_index do |team, index|
+    NflRankings::Team.all.each_with_index do |team, index|
       puts "#{index +1 }. #{team.city} #{team.mascot}"
     end
 
