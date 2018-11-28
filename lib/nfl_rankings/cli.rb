@@ -25,8 +25,10 @@ class NflRankings::CLI
         puts "\nTotal Passing yards: #{NflRankings::Team.all[team_rank].passing_yards}"
         puts "Total Rushing yards: #{NflRankings::Team.all[team_rank].rushing_yards}"
         puts "Total Receiving yards: #{NflRankings::Team.all[team_rank].receiving_yards}"
-      else
+      elsif input != "exit" && @nfl_teams.include?(input) == false
         puts "Invalid Response. Please try again."
+      elsif input == "exit"
+        puts "Check again next week for an update!"
       end
     end
   end
