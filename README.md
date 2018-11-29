@@ -1,4 +1,20 @@
-test_this
+
+NFL Rankings:
+
+This CLI scrapes the USA Today Weekly NFL Rankings (https://www.usatoday.com/sports/nfl/rankings/) and displays each team (32 teams) from highest ranked to lowest. If the user is interested in seeing additional information about a specific team, the user is asked to enter a number that corresponds to the team name next to the number. Three offensive categories will be displayed:
+
+Total Offensive Yards
+Total Rushing Yards
+Total Receiving Yards
+
+The user can either continue and see another team’s stats or quit the program. 
+
+Authors:
+Matthew Cohen
+
+
+Acknowledgments
+Cernan and Enoch for assistance with scraping and guidance!
 
 # NflRankings
 
